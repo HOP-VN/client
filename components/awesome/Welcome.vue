@@ -47,9 +47,9 @@ const leadingsText = computed(() => [
 
 onMounted(() => {
   try {
-    console.log('aweawe', parseMenuTitle('aweawe'), this)
+    // console.log('aweawe', parseMenuTitle('aweawe'), this)
   } catch (error) {
-    console.log('aweawe error', error)
+    // console.log('aweawe error', error)
   }
 })
 </script>
@@ -153,11 +153,13 @@ onMounted(() => {
   100% {
     opacity: 1;
   }
+
   33.333%,
   83.333% {
     opacity: 0;
   }
 }
+
 @keyframes anim-fg-2 {
   0%,
   16.667%,
@@ -165,22 +167,26 @@ onMounted(() => {
   100% {
     opacity: 0;
   }
+
   33.333%,
   50% {
     opacity: 1;
   }
 }
+
 @keyframes anim-fg-3 {
   0%,
   50%,
   100% {
     opacity: 0;
   }
+
   66.667%,
   83.333% {
     opacity: 1;
   }
 }
+
 .animated-text-bg {
   position: relative;
   display: block;
@@ -198,6 +204,7 @@ onMounted(() => {
   z-index: 0;
   padding-left: var(--padding);
   padding-right: var(--padding);
+
   &:before {
     content: var(--content);
     position: absolute;
@@ -212,6 +219,7 @@ onMounted(() => {
     padding-right: var(--padding);
   }
 }
+
 .animated-text-fg {
   background-clip: text;
   -webkit-background-clip: text;
@@ -228,9 +236,11 @@ onMounted(() => {
   z-index: 1;
   animation: var(--animation-name) 8s infinite;
 }
+
 html.dark {
   .animated-text-bg {
     color: theme('colors.gray.100');
+
     &:before {
       color: theme('colors.gray.100');
     }
