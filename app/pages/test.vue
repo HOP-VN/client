@@ -1,10 +1,9 @@
 <script lang="ts" setup>
+import { useIdentity } from '~/stores/use-identity';
+
 //
 const counter = useCounter()
 const identity = useIdentity()
-
-// compiler micro
-definePageMeta({ layout: 'page' })
 useHead({ title: 'Test Page' })
 </script>
 
@@ -26,21 +25,21 @@ useHead({ title: 'Test Page' })
             type="secondary"
             size="sm"
             text="increment"
-            @click.prevent="counter.increment"
+            @click.prevent="counter.inc"
           />
           <AwesomeButton
             class="w-full md:w-auto"
             type="secondary"
             size="sm"
             text="increment2x"
-            @click.prevent="counter.increment2x"
+            @click.prevent="counter.inc"
           />
           <AwesomeButton
             class="w-full md:w-auto capitalize"
             type="secondary"
             size="sm"
             text="decrement"
-            @click.prevent="counter.decrement"
+            @click.prevent="counter.dec"
           />
           <AwesomeButton
             class="w-full md:w-auto capitalize"
