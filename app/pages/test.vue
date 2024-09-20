@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useIdentity } from '~/stores/use-identity';
+import { useIdentity } from '~/stores/use-identity'
 
 //
 const counter = useCounter()
