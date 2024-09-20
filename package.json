@@ -58,6 +58,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/eslint-module": "^4.1.0",
     "consola": "^3.2.3",
