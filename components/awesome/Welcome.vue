@@ -14,11 +14,6 @@ const showAlert = ref(
     : props.withAlert,
 )
 
-
-
-
-
-
 const titlesText = computed<string[]>(() =>
   (
     awesome?.layout?.welcome?.title ||
@@ -86,13 +81,11 @@ onMounted(() => {
             'Nuxt 3',
           )
             " :to="parseMenuRoute(
-
               'https://nuxt.com',
             )
               " class="font-extrabold" />
           <AwesomeButton v-if="
             parseMenuRoute(
-
               awesome?.project?.links?.github,
             )
           " :text="parseMenuTitle(

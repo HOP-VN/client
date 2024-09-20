@@ -19,10 +19,10 @@ useHead({ title: 'Test Page' })
       <div class="mb-6">
         <div class="mb-2">Counter : {{ counter.count }}</div>
         <div
-          class="flex flex-col items-center justify-items-center space-y-2 md:space-y-0 md:flex-row md:space-x-2"
+          class="flex flex-col items-center justify-items-center space-y-2 md:flex-row md:space-x-2 md:space-y-0"
         >
           <AwesomeButton
-            class="w-full md:w-auto capitalize"
+            class="w-full capitalize md:w-auto"
             type="secondary"
             size="sm"
             text="increment"
@@ -36,14 +36,14 @@ useHead({ title: 'Test Page' })
             @click.prevent="counter.increment2x"
           />
           <AwesomeButton
-            class="w-full md:w-auto capitalize"
+            class="w-full capitalize md:w-auto"
             type="secondary"
             size="sm"
             text="decrement"
             @click.prevent="counter.decrement"
           />
           <AwesomeButton
-            class="w-full md:w-auto capitalize"
+            class="w-full capitalize md:w-auto"
             type="secondary"
             size="sm"
             text="reset"
@@ -59,7 +59,7 @@ useHead({ title: 'Test Page' })
         </div>
         <div class="mb-2">
           <div
-            class="flex flex-col items-center space-y-2 md:space-y-0 md:flex-row md:space-x-2"
+            class="flex flex-col items-center space-y-2 md:flex-row md:space-x-2 md:space-y-0"
           >
             <AwesomeFormTextInput
               v-model="identity.firstName"
@@ -72,7 +72,7 @@ useHead({ title: 'Test Page' })
               class="w-full md:w-1/3"
             />
             <AwesomeButton
-              class="capitalize w-full md:w-auto"
+              class="w-full capitalize md:w-auto"
               text="reset"
               type="secondary"
               size="md"

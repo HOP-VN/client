@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 // compiler micro
 definePageMeta({ layout: 'page' })
 useHead({ title: 'Posts' })
@@ -18,12 +17,12 @@ useHead({ title: 'Posts' })
           <div
             v-for="article in list"
             :key="article._path"
-            class="hover:no-underline p-6 flex space-x-6 rounded border border-gray-900/10 dark:border-gray-50/[0.2] mb-4"
+            class="mb-4 flex space-x-6 rounded border border-gray-900/10 p-6 hover:no-underline dark:border-gray-50/[0.2]"
           >
-            <div class="mt-1 text-gray-600 dark:text-gray-400 text-right">
+            <div class="mt-1 text-right text-gray-600 dark:text-gray-400">
               <div>{{ article.date }}</div>
               <AwesomeLink
-                class="text-sm flex items-center justify-end space-x-1"
+                class="flex items-center justify-end space-x-1 text-sm"
                 :href="`https://www.github.com/${article.author}`"
               >
                 <Icon name="mdi:github-face" class="text-xs" />
@@ -36,12 +35,12 @@ useHead({ title: 'Posts' })
               >
                 {{ article.title }}
               </div>
-              <div class="text-gray-700 dark:text-gray-300 mb-1">
+              <div class="mb-1 text-gray-700 dark:text-gray-300">
                 {{ article.description }}
               </div>
               <div class="flex">
                 <AwesomeLink
-                  class="text-sm flex space-x-1 items-center text-primary-500"
+                  class="flex items-center space-x-1 text-sm text-primary-500"
                   :to="article._path"
                 >
                   <span>learn more</span>

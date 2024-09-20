@@ -67,7 +67,7 @@ const close = () => {
       leave-to="opacity-0"
     >
       <div
-        :class="`bg-gray-200 dark:bg-gray-800 bg-gradient-to-r shadow-white/50 dark:shadow-gray-950/50 px-6 py-6 rounded-md shadow-lg flex space-x-6 ${selectedStyle}`"
+        :class="`flex space-x-6 rounded-md bg-gray-200 bg-gradient-to-r px-6 py-6 shadow-lg shadow-white/50 dark:bg-gray-800 dark:shadow-gray-950/50 ${selectedStyle}`"
       >
         <div class="flex items-center justify-center">
           <slot name="icon">
@@ -89,7 +89,7 @@ const close = () => {
           </slot>
         </div>
         <div class="flex-1">
-          <div :class="`font-bold text-lg mb-0.5 ${selectedTextStyle}`">
+          <div :class="`mb-0.5 text-lg font-bold ${selectedTextStyle}`">
             <slot name="title">{{ props.title }}</slot>
           </div>
           <div class="text-gray-700 dark:text-gray-100">
@@ -98,7 +98,7 @@ const close = () => {
         </div>
         <div>
           <button
-            class="text-gray-600 hover:text-red-500 dark:text-gray-400 font-bold"
+            class="font-bold text-gray-600 hover:text-red-500 dark:text-gray-400"
             @click="close"
           >
             <Icon name="clarity:times-line" />

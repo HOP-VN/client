@@ -33,31 +33,31 @@ const availableThemes = [
     >
       <HeadlessListboxLabel class="sr-only">Theme</HeadlessListboxLabel>
       <HeadlessListboxButton type="template">
-        <AwesomeLink class="dark:text-gray-400 text-gray-600">
-          <span class="flex justify-center items-center dark:hidden">
+        <AwesomeLink class="text-gray-600 dark:text-gray-400">
+          <span class="flex items-center justify-center dark:hidden">
             <Icon name="uil:sun" />
           </span>
-          <span class="justify-center items-center hidden dark:flex">
+          <span class="hidden items-center justify-center dark:flex">
             <Icon name="uil:moon" />
           </span>
         </AwesomeLink>
       </HeadlessListboxButton>
       <HeadlessListboxOptions
-        class="p-1 absolute z-50 origin-top-right top-full right-0 outline-none bg-white rounded-lg ring-1 ring-gray-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-gray-700 font-semibold dark:bg-gray-800 dark:ring-0 dark:highlight-white/5 dark:text-gray-300"
+        class="dark:highlight-white/5 absolute right-0 top-full z-50 w-36 origin-top-right overflow-hidden rounded-lg bg-white p-1 py-1 text-sm font-semibold text-gray-700 shadow-lg outline-none ring-1 ring-gray-900/10 dark:bg-gray-800 dark:text-gray-300 dark:ring-0"
       >
         <HeadlessListboxOption
           v-for="theme in availableThemes"
           :key="theme.key"
           :value="theme.key"
           :class="{
-            'py-2 px-2 flex items-center cursor-pointer': true,
-            'text-sky-500 bg-gray-100 dark:bg-gray-600/30':
+            'flex cursor-pointer items-center px-2 py-2': true,
+            'bg-gray-100 text-sky-500 dark:bg-gray-600/30':
               $colorMode.preference === theme.key,
             'hover:bg-gray-50 dark:hover:bg-gray-700/30':
               $colorMode.preference !== theme.key,
           }"
         >
-          <span class="text-sm mr-2 flex items-center">
+          <span class="mr-2 flex items-center text-sm">
             <Icon v-if="theme.key === 'light'" name="uil:sun" />
             <Icon v-else-if="theme.key === 'dark'" name="uil:moon" />
             <Icon v-else-if="theme.key === 'system'" name="uil:laptop" />
@@ -69,7 +69,7 @@ const availableThemes = [
     <select
       v-if="currentStyle === 'select-box'"
       v-model="$colorMode.preference"
-      class="w-full px-2 pr-3 py-1 outline-none rounded border bg-transparent text-gray-700 dark:text-gray-300 border-gray-900/10 dark:border-gray-50/[0.2]"
+      class="w-full rounded border border-gray-900/10 bg-transparent px-2 py-1 pr-3 text-gray-700 outline-none dark:border-gray-50/[0.2] dark:text-gray-300"
     >
       <option
         v-for="theme in availableThemes"

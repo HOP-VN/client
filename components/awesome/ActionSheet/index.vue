@@ -41,7 +41,7 @@ onMounted(() => {
   <Teleport to="body">
     <HeadlessTransitionRoot
       :show="isShow"
-      class="action-sheet fixed z-50 top-0 left-0 w-screen h-screen max-h-screen max-w-full flex flex-col justify-end bg-black/[0.5]"
+      class="action-sheet fixed left-0 top-0 z-50 flex h-screen max-h-screen w-screen max-w-full flex-col justify-end bg-black/[0.5]"
       enter="transition-opacity duration-300"
       enter-from="opacity-0"
       enter-to="opacity-100"
@@ -50,14 +50,14 @@ onMounted(() => {
       leave-to="opacity-0"
       @click="onCloseComponentClick"
     >
-      <div class="flex flex-col overflow-hidden relative">
+      <div class="relative flex flex-col overflow-hidden">
         <div
-          class="action-sheet-container flex-1 overflow-y-auto space-y-1 justify-end px-4 pb-2 pt-4"
+          class="action-sheet-container flex-1 justify-end space-y-1 overflow-y-auto px-4 pb-2 pt-4"
         >
           <slot />
           <AwesomeActionSheetGroup v-if="closeButton">
             <AwesomeActionSheetItemButton
-              class="text-red-500 font-bold"
+              class="font-bold text-red-500"
               :text="closeButtonText"
               @click="close"
             />

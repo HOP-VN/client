@@ -2,6 +2,9 @@
   "semi": false,
   "singleQuote": true,
   "trailingComma": "es5",
-  "tailwindConfig": "./tailwind.config.js",
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "tailwindConfig": "./tailwind.config.ts",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "prettier": {
+    "classAttributes": ["class", "className"]
+  }
 }

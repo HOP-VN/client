@@ -26,7 +26,7 @@ const updateIndicator = () => {
   const dom = tabHeaderIndicator.value
   // get header tab item dom
   const currentActiveIndex = tabItems.value.findIndex(
-    ({ name }) => name === activeTab.value,
+    ({ name }) => name === activeTab.value
   )
   const tabItem = tabs.value.querySelectorAll('.tabs-header-item')[
     currentActiveIndex
@@ -73,7 +73,7 @@ onMounted(() => {
   <div ref="tabs" class="tabs">
     <ClientOnly>
       <div
-        class="tabs-header relative overflow-hidden flex space-x-6 text-sm font-bold text-gray-300 bg-primary-700 rounded-t-lg px-5 py-3"
+        class="tabs-header relative flex space-x-6 overflow-hidden rounded-t-lg bg-primary-700 px-5 py-3 text-sm font-bold text-gray-300"
       >
         <div
           v-for="item in tabItems"
@@ -93,15 +93,15 @@ onMounted(() => {
         </div>
         <span
           ref="tabHeaderIndicator"
-          class="absolute flex h-full top-0 left-0 p-1 py-1.5 overflow-hidden transition-all duration-300"
+          class="absolute left-0 top-0 flex h-full overflow-hidden p-1 py-1.5 transition-all duration-300"
           :style="{ zIndex: 1 }"
         >
-          <span class="flex-1 bg-gray-500/40 rounded-lg" />
+          <span class="flex-1 rounded-lg bg-gray-500/40" />
         </span>
       </div>
     </ClientOnly>
     <div
-      class="tabs-body relative text-gray-800 dark:text-white bg-gray-200 dark:bg-gray-800 shadow rounded-b-lg"
+      class="tabs-body relative rounded-b-lg bg-gray-200 text-gray-800 shadow dark:bg-gray-800 dark:text-white"
     >
       <slot />
     </div>
