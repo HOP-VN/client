@@ -38,11 +38,11 @@ const validate = async () => {
   // fetch username from github api
   try {
     const response = await fetch(
-      `https://api.github.com/users/${username.value}`,
+      `https://api.github.com/users/${username.value}`
     )
     if (response.status !== 200) {
       throw new Error(
-        `error when fetching username : ${response.statusText} (${response.status})`,
+        `error when fetching username : ${response.statusText} (${response.status})`
       )
     }
     const data = (await response.json()) as {
@@ -77,7 +77,7 @@ const validate = async () => {
           :vertical="screen.higherThan('md')"
         >
           <HeadlessTabList
-            class="w-full md:w-1/6 flex md:flex-col rounded-lg mb-2"
+            class="mb-2 flex w-full rounded-lg md:w-1/6 md:flex-col"
           >
             <HeadlessTab
               v-for="(item, i) in ['General', 'Protection', 'Advanced']"
@@ -87,7 +87,7 @@ const validate = async () => {
             >
               <button
                 :class="[
-                  'md:w-full text-left px-3 rounded py-2.5 text-sm leading-5 transition-all hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-white/[0.12] dark:hover:text-white',
+                  'rounded px-3 py-2.5 text-left text-sm leading-5 transition-all hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-white/[0.12] dark:hover:text-white md:w-full',
                   selected
                     ? 'font-extrabold'
                     : 'text-gray-800 dark:text-gray-400',
@@ -121,12 +121,12 @@ const validate = async () => {
                   </div>
                 </AwesomeCardContent>
                 <AwesomeCardFooter
-                  class="flex flex-col space-y-2 md:space-y md:flex-row items-center md:justify-between"
+                  class="md:space-y flex flex-col items-center space-y-2 md:flex-row md:justify-between"
                 >
                   <p>
                     Learn more about
                     <AwesomeLink
-                      class="underline font-bold capitalize"
+                      class="font-bold capitalize underline"
                       text="github users api"
                       href="https://docs.github.com/en/rest/users/users#get-a-user"
                     />

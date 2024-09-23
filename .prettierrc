@@ -1,4 +1,10 @@
 {
   "semi": false,
-  "singleQuote": true
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "tailwindConfig": "./tailwind.config.ts",
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "prettier": {
+    "classAttributes": ["class", "className"]
+  }
 }

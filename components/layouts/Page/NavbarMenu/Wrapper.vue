@@ -33,7 +33,7 @@ const isActive = computed(() => {
   <template v-else-if="menu.children && menu.children.length > 0">
     <HeadlessPopover v-slot="{ open }">
       <HeadlessPopoverButton
-        class="flex items-center transition-all duration-300 text-gray-900 dark:text-gray-100"
+        class="flex items-center text-gray-900 transition-all duration-300 dark:text-gray-100"
       >
         <span :class="[isActive ? 'font-bold' : '']">{{
           parseMenuTitle(menu.title)
@@ -41,7 +41,7 @@ const isActive = computed(() => {
         <Icon
           name="carbon:chevron-down"
           class="ml-1"
-          :class="[open ? 'transform rotate-180' : '']"
+          :class="[open ? 'rotate-180 transform' : '']"
         />
       </HeadlessPopoverButton>
       <Transition
@@ -53,7 +53,7 @@ const isActive = computed(() => {
         leave-to-class="translate-y-1 opacity-0"
       >
         <HeadlessPopoverPanel
-          class="absolute z-10 px-2 py-2 rounded-lg min-w-[150px] bg-gray-50 border-gray-300 dark:bg-gray-900 border dark:border-gray-600"
+          class="absolute z-10 min-w-[150px] rounded-lg border border-gray-300 bg-gray-50 px-2 py-2 dark:border-gray-600 dark:bg-gray-900"
         >
           <div class="grid grid-cols-1">
             <template v-for="(child, j) in menu.children" :key="j">

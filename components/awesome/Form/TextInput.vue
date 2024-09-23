@@ -42,20 +42,20 @@ const modelValue = useSyncProps<string>(props, 'modelValue', emit)
 const havePreEl = computed(
   () =>
     typeof slots.prefix !== 'undefined' ||
-    typeof slots['prefix-disabled'] !== 'undefined',
+    typeof slots['prefix-disabled'] !== 'undefined'
 )
 const haveSuEl = computed(() => typeof slots.suffix !== 'undefined')
 const selectedBorderStyle = computed(
-  () => 'border-gray-900/10 dark:border-gray-50/[0.2]',
+  () => 'border-gray-900/10 dark:border-gray-50/[0.2]'
 )
 const selectedOnHoverBorderStyle = computed(
-  () => 'dark:focus:border-white focus:border-gray-900',
+  () => 'dark:focus:border-white focus:border-gray-900'
 )
 const selectedPaddingStyle = computed(
-  () => paddingStyles[props.size] || paddingStyles.md,
+  () => paddingStyles[props.size] || paddingStyles.md
 )
 const selectedFontSizeStyle = computed(
-  () => fontSizeStyles[props.size] || fontSizeStyles.md,
+  () => fontSizeStyles[props.size] || fontSizeStyles.md
 )
 </script>
 
@@ -63,7 +63,7 @@ const selectedFontSizeStyle = computed(
   <div :class="`text-input-container relative flex`">
     <div
       v-if="slots['prefix-disabled']"
-      :class="`duration-300 transition-colors flex rounded-l bg-gray-100 dark:bg-gray-800 text-gray-500 border ${selectedBorderStyle}`"
+      :class="`flex rounded-l border bg-gray-100 text-gray-500 transition-colors duration-300 dark:bg-gray-800 ${selectedBorderStyle}`"
     >
       <slot name="prefix-disabled" />
     </div>
@@ -76,7 +76,7 @@ const selectedFontSizeStyle = computed(
     <div class="text-input-wrapper relative flex flex-1">
       <input
         v-model="modelValue"
-        :class="`duration-300 transition-colors text-input w-full flex-1 bg-transparent outline-none border ${
+        :class="`text-input w-full flex-1 border bg-transparent outline-none transition-colors duration-300 ${
           havePreEl ? '' : 'rounded-l'
         } ${
           haveSuEl ? '' : 'rounded-r'

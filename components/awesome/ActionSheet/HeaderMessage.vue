@@ -8,7 +8,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="text-xs text-center text-gray-700 dark:text-gray-500">
+  <div class="text-center text-xs text-gray-700 dark:text-gray-500">
     <slot>
       <span>{{ text }}</span>
     </slot>

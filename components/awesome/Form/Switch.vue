@@ -47,19 +47,19 @@ onMounted(() => {
   <label :for="id" class="flex cursor-pointer">
     <label
       :for="id"
-      class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in"
+      class="relative mr-2 inline-block w-10 select-none align-middle transition duration-200 ease-in"
     >
       <input
         :id="id"
         ref="input"
         type="checkbox"
-        class="switch-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-gray-900 border-2 border-gray-300 dark:border-gray-600 appearance-none cursor-pointer"
+        class="switch-checkbox absolute block h-6 w-6 cursor-pointer appearance-none rounded-full border-2 border-gray-300 bg-white dark:border-gray-600 dark:bg-gray-900"
         :checked="checked"
         @change="onInputChange"
       />
       <label
         :for="id"
-        class="switch-label block overflow-hidden h-6 rounded-full bg-gray-200 dark:bg-gray-700 cursor-pointer border border-gray-300 dark:border-gray-500"
+        class="switch-label block h-6 cursor-pointer overflow-hidden rounded-full border border-gray-300 bg-gray-200 dark:border-gray-500 dark:bg-gray-700"
       />
     </label>
     <slot />
